@@ -1,4 +1,5 @@
 Hubly::Application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -6,7 +7,11 @@ Hubly::Application.routes.draw do
   # root 'welcome#index'
   root 'static_pages#index'
   get 'help' => 'static_pages#help'
+  get 'about' => 'static_pages#about'
   get 'login' => 'static_pages#login'
+  
+  resources :users
+  match '/signup', to: 'users#new', via: 'get'
   #get 'home' => 'static_pages#index'
 
   # Example of regular route:
