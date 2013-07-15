@@ -5,6 +5,8 @@ Hubly::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'static_pages#index'
+  get 'help' => 'static_pages#help'
+  get 'login' => 'static_pages#login'
   #get 'home' => 'static_pages#index'
 
   # Example of regular route:
